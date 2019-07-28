@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header size="4" class="header">Header</Header>
+    <aside class="sidebar">Side Bar</aside>
+    <main class="main">Main Area</main>
+    <footer class="footer">Footer</footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 20rem auto;
+  grid-template-rows: 3rem minmax(10px, auto) 50px;
+  grid-template-areas: "header header"
+                         "sidebar main"
+                         "footer footer";
+}
+
+.header {
+  grid-area: header;
+  background: rgba(230, 225, 222, 0.5);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: rgba(197, 191, 191, 0.5);
+}
+
+.main {
+  grid-area: main;
+  background: rgba(159, 177, 159, 0.5);
+}
+
+.footer {
+  grid-area: footer;
+  background: rgba(140, 140, 156, 0.5);
 }
 </style>
