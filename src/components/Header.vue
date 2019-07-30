@@ -1,12 +1,12 @@
 <template>
-    <div class="container">
-        <div class="logo">
-            <a href="">
+    <div class="nav">
+        <div class="nav--logo">
+            <a href="" class="nav--logo--link">
                 <img src="../assets/logo.png" alt="Home">
             </a>
         </div>
-        <div class="feature">
-            <ul>
+        <div class="nav--features">
+            <ul class="nav--features--feature">
                 <li v-for="(item, index) in list" :key="index">
                     <div><a href="">{{item.display}}</a></div>
                 </li>
@@ -27,71 +27,70 @@
             }
         },
         watch: {
-            size(newValue) {
+            /*size(newValue) {
                 for (let i=0; i<newValue; i++) {
                     this.list.push({
                         value: 'item-value-' + i,
                         display: 'item-display-' + i    
                     });
                 }
-            }
+            }*/
         },
         methods: {
             createList() {
                 for (let i=0; i<this.size; i++) {
                     this.list.push({
-                        value: 'item-value-' + i,
-                        display: 'item-display-' + i    
+                        value: 'Button' + i,
+                        display: 'Button' + i
                     });
                 }
             }
         },
         created() {
-            for (let i=0; i<this.size; i++) {
-                this.list.push({
-                    value: 'Button' + i,
-                    display: 'Button' + i    
-                });
-            }
+            this.createList();
         }
     }
 </script>
 
 <style>
-    .container {
+    .nav {
         display: flex; 
         justify-content: space-between;
     }
 
-    .logo {
+    .nav--logo {
         display: inline-block; 
         margin-left: 5px; 
         margin-top: 2px
     }
 
-    .feature {
-        display: inline-block; 
+    .nav--logo--link {
+        text-decoration: none;
     }
 
-    img {
+    .nav--logo--link img {
         height: 2.5rem;
     }
 
-    ul {
+    .nav--features {
+        display: inline-block; 
+    }
+
+    .nav--features--feature {
         display: flex;
         flex-direction: row-reverse;
         padding: 0;
         margin-top: 5px;
     }
 
-    li {
+    .nav--features--feature li {
         list-style: none;
         display: inline-block;
         margin: 5px;
         font-size: 15px;
     }
 
-    a {
+    .nav--features--feature li a {
         text-decoration: none;
     }
 </style>

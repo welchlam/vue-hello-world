@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header size="4" class="header">Header</Header>
-    <aside class="sidebar">Side Bar</aside>
+    <Sidebar class="sidebar">Side Bar</Sidebar>
     <main class="main">Main Area</main>
     <footer class="footer">Footer</footer>
   </div>
@@ -9,11 +9,13 @@
 
 <script>
 import Header from './components/Header.vue'
+import Sidebar from "./components/Sidebar";
 
 export default {
   name: 'app',
   components: {
-    Header
+    Header,
+    Sidebar
   }
 }
 </script>
