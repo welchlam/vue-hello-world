@@ -32,6 +32,8 @@
                 </div>
             </li>
         </ul>
+
+        <b-alert show>Default Alert</b-alert>
     </div>
 </template>
 

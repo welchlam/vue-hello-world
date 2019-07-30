@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header size="4" class="header">Header</Header>
-    <Sidebar class="sidebar">Side Bar</Sidebar>
-    <main class="main">Main Area</main>
+    <Header size="4" class="header" />
+    <Sidebar class="sidebar" />
+    <Main class="main" />
     <footer class="footer">Footer</footer>
   </div>
 </template>
@@ -10,12 +10,14 @@
 <script>
 import Header from './components/Header.vue'
 import Sidebar from "./components/Sidebar";
+import Main from './components/Main'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Sidebar
+    Sidebar,
+    Main
   }
 }
 </script>
@@ -25,7 +27,7 @@ export default {
   text-align: center;
   display: grid;
   height: 100vh;
-  grid-template-columns: 20rem auto;
+  grid-template-columns: 15rem auto;
   grid-template-rows: 3rem minmax(10px, auto) 50px;
   grid-template-areas: "header header"
                          "sidebar main"
