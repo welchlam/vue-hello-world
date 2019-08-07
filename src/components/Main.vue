@@ -1,23 +1,36 @@
 <template>
     <div>
-        <b-table striped hover :items="items"></b-table>
+        <b-table striped hover :items="users"></b-table>
         <b-alert show>Default Alert</b-alert>
+        <button @click="addUser"> Add User </button>
+        <button @click="removeUser"> Remove User </button>
     </div>
 </template>
 
 <script>
+    import { mapState } from 'vuex'
+
     export default {
         name: 'Main',
-        data() {
-            return {
-                items: [
-                    { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-                    { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-                    { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-                    { age: 38, first_name: 'Jami', last_name: 'Carney' }
-                ]
+        computed: mapState({
+            users: state => state.users.users
+        }),
+        methods: {
+            addUser() {
+                this.$store.dispatch('addUserAction', {
+                    age: 33, first_name: 'Lin', last_name: 'Welch'
+                })
+            },
+            removeUser() {
+                this.$store.dispatch('removeUserAction', {
+                    age: 33, first_name: 'Lin', last_name: 'Welch'
+                })
             }
         }
+        // methods: mapActions('users', [
+        //     'addUserAction',
+        //     'removeUserAction'
+        // ])
     }
 </script>
 

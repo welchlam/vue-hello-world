@@ -1,35 +1,8 @@
 <template>
     <div class="side">
         <ul class="side--features">
-            <li>
-                <div>
-                    <a href="">Item AAA</a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="">Item BBB</a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="">Item CCC</a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="">Item DDD</a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="">Item EEE</a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="">Item FFF</a>
-                </div>
+            <li v-for="(user, index) in users" :key="index">
+                <div><a href="">{{user.first_name}}</a></div>
             </li>
         </ul>
 
@@ -38,13 +11,23 @@
 </template>
 
 <script>
+    // import { mapState } from 'vuex'
+
     export default {
         name: 'Sidebar',
         data() {
             return {
-
+                // users: this.$store.state.users.users
+            }
+        },
+        computed: {
+            users() {
+                return this.$store.state.users.users
             }
         }
+        // computed: mapState({
+        //     users: state => state.users.users
+        // }),
     }
 </script>
 

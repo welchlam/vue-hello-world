@@ -19,7 +19,7 @@
     export default {
         name: 'Header',
         props: {
-            size: Number
+            size: String
         },
         data() {
             return {
