@@ -5,7 +5,7 @@ describe('Header.vue', () => {
     const wrapper = mount(Header)
 
     it('should mount header', () => {
-        // expect(header).t
+        expect(wrapper).not.toBeNull()
         console.log(wrapper)
     })
 })
