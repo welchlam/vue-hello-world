@@ -7,9 +7,9 @@ module.exports = {
     },
 
     extends: [
-        'plugin:vue/strongly-recommended',
-        '@vue/standard',
-        '@vue/typescript'
+        'plugin:vue/strongly-recommended'
+        // '@vue/standard',
+        // '@vue/typescript'
     ],
 
     rules: {
@@ -39,9 +39,9 @@ module.exports = {
             }
         }]
     },
-    parserOptions: {
-        parser: '@typescript-eslint/parser'
-    },
+    // parserOptions: {
+    //     parser: '@typescript-eslint/parser'
+    // },
 
     globals: {}
 }
